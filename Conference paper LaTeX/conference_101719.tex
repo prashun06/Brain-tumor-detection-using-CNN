@@ -1,0 +1,172 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Brain Tumor Detection using Convolutional Neutral Network\\}
+
+\author{\IEEEauthorblockN{\textsuperscript{} Prashun Roy}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST} \\
+Cumilla, Bangladesh \\
+prashun.roy.0106@gmail.com}
+\and
+\IEEEauthorblockN{\textsuperscript{} Syeda Tamanna Hossain}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST}\\
+Cumilla, Bangladesh \\
+syedatamannahossain@gmail.com}
+\and
+\IEEEauthorblockN{\textsuperscript{} MD. Hasibul Hasan Raad}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST}\\
+Cumilla, Bangladesh \\
+hasibulhasan37868@gmail.com}
+\and
+\IEEEauthorblockN{\textsuperscript{} MD. Minhajul Islam}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST}\\
+Cumilla, Bangladesh \\
+minhazulislam1205@gmail.com}
+\and
+\IEEEauthorblockN{\textsuperscript{} Maisha Mahmud}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST}\\
+Cumilla, Bangladesh \\
+mahmudmaisha858@gmail.com}
+\and
+\IEEEauthorblockN{\textsuperscript{} MD. Maruf Hasan}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST}\\
+Cumilla, Bangladesh \\
+md.maruf.hasan.monna@gmail.com}
+
+\and
+\IEEEauthorblockN{\textsuperscript{} Zahid Hasan}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST}\\
+Cumilla, Bangladesh \\
+jahidhasan6884@gmail.com}
+\and
+
+\IEEEauthorblockN{\textsuperscript{} Rabeya Sultana}
+\IEEEauthorblockA{\textit{Electrical and Electronic Engineering} \\
+\textit{BAIUST}\\
+Cumilla, Bangladesh \\
+swarna1206020@gmail.com}
+
+}
+\maketitle
+
+\begin{abstract}
+Brain tumor detection is a difficult task. But nowadays it becomes easy with the help of machine learning. To identify a patient's brain tumor, we are using the data of MRI images of the brain. Here we try to identify whether a brain tumor has existed or not in the patient's brain. It is most essential to detect the tumors at an early stage to ensure good treatment of a patient. There are many literature on detecting brain tumors and for the improvement the detection accuracy. In this paper, we presume the brain tumor celerity using Convolutional Neural Networking algorithm which gives accurate results. When neurology specialists and radiologists evaluate the image, there can be human error, costly and time consuming processes. The main purpose is to build a robust CNN model that can classify if the patient has a tumor or not based on brain MRI scan images with good accuracy. 
+\end{abstract}
+
+\begin{IEEEkeywords}
+CNN, Tumor Detection, Tumor Identification, Gaussian Filters, Pooling
+\end{IEEEkeywords}
+
+\section*{Introduction}
+The tumor has happened for unusual growth of the tissues. A brain tumor is a number of unneeded cells enlarging the central spinal canal or in the whole brain. Tumors have different features and treatments. Moderately tumors turned into cancer. In the early stage,a tumor arises in the brain and likely to remain in the brain and later incepted as cancer. Brain tumor sectionalisation is one of the most critical procedures to ensure proper treatment. Brain tumor segregation using MRI has been a good research-able area. Brain tumors are different in shapes and look at different places in the brain. Using the various amounts of tumors in brain MRI(Magnetic Resonance Images) results in the automatic division of the tumor. There are many types of techniques that are proposed to segregate tumors on MRI. But most detection and diagnosis methods depend on the decision of neurology specialists and radiologists. MRI Images are highly used for brain scanning and gives a digital representation of tissues. MRI scanners can produce sliced images into both horizontal and vertical planes. MRI scanner images are good to identify, detect, and classify the tumor parts of the brain.\cite{b1} 
+
+\section{Methodology}
+There are 5 steps are used in CNN.
+
+ 1. Data Set 
+\vspace{3mm}
+ 
+2. Image Pre-processing
+\vspace{3mm}
+
+3. Data Augmentation
+\vspace{3mm}
+
+4. Feature Extraction
+\vspace{3mm}
+
+5. Classification
+
+
+
+\section*{Convolutional Neutral Network}
+A convolutional neural network is a type of deep neural network which is normally used in visual images. It's also known as CONVNETS.\cite{b1}
+  
+\subsection{Data Set}
+The data set of 253 images is used for the training and testing for the neural network \cite{b3}. 98 images are without a brain tumor and 155 images are with a brain tumor. A proper model will improve the accuracy of relatively low input data.
+\begin{figure} [htb]
+\centering 
+
+\subfloat{\includegraphics[width=0.15\textwidth]{18 no.jpg}}\hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{21 no.jpg}} \hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{14 no.jpg}} \\
+\subfloat{\includegraphics[width=0.15\textwidth]{29 no.jpg}}\hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{33 no.jpg}}\hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{34 no.jpg}}\hfill
+\caption{\label{fig:samplesetup}Images Without Brain Tumor}
+
+\subfloat{\includegraphics[width=0.15\textwidth]{Y1.jpg}}\hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{Y13.jpg}} \hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{Y14.jpg}}\\
+\subfloat{\includegraphics[width=0.15\textwidth]{Y26.jpg}}\hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{Y28.jpg}}\hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{Y36.jpg}}\hfill
+\caption{\label{fig:samplesetup}Images With Brain Tumor}
+\end{figure}
+
+
+\subsection{Image Pre-processing}
+Pre-processing stage is a basic step of CNN. Images that are collected are subjected to pre-processing. Image re-sizing and applying Gaussian filters for perfect input for the model for proper segmentation of the target object from the image. Pre-processing will clean the image for further analysis.Image cropping, horizontal flip, image normalization, encoding images into binary is the key part of this process. 
+
+\subsection{Data Augmentation}
+
+Deep learning neural network improvement depends on data availability. Data augmentation is a process to artificially create new training data from existing training data. In the data augmentation process scaling, mapping and rotation are used to make the data trained. 
+
+\subsection{Feature Extraction}
+The feature extraction process to label the images and extract the features and characteristics using the filter and proper algorithm of images for easy detection of brain tumors. Data Augmentation is the important process extract all the target feature of the images.\cite{b2}
+
+\subsection{Classification}
+Classification stage,a Convolutional neural networks algorithm is used for the classification of brain images using artificial neural network placed in the full connection step inside the CNN. It is a non-parametric method that is used for both classification and regression.\cite{b4}
+
+
+\section{Result}
+There are 3 data of input is used to test the output of the model.
+
+\begin{figure} [htb]
+\centering 
+\subfloat{\includegraphics[width=0.15\textwidth]{yes_or_no.jpg}}\hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{yes_or_no2.jpg}} \hfill
+\subfloat{\includegraphics[width=0.15\textwidth]{yes_or_no3.jpg}}\hfill
+\caption{\label{fig:samplesetup}Images for Brain Tumor Prediction Test}
+\end{figure}
+
+The first image of the MRI scan has no brain tumor according to the prediction. Second and third patient The CNN model predicts the output with 79\%-91\% of accuracy which is a very satisfactory result. Here the data set is small but the created model can give us very high accuracy. 
+\section*{Conclusion}
+This paper has been given a far-reaching profile of MRI-based brain tumor dissection techniques. The MRI-based brain tumor dissection techniques are to give a fundamental judgment on observing, tumor examining, and also treatment. Also to give solid outcomes inside a proper calculation time. Transfer learning can simplify even complicated problems with the drawback of computation time. Proper image processing based on the problem statement is what separates a good model from a bad one. 
+
+
+
+\begin{thebibliography}{00}
+\bibitem{b1} Harshini Badisa, Madhavi Polireddy, Aslam Mohammed , ''CNN Based Brain Tumor Detection'',International Journal of Engineering and Advanced Technology (IJEAT), April 2019 pp.1-4.
+
+\bibitem{b2} Kumar, GJ and Kumar GV (2008), ''Biological Early Brain Cancer Detection Using Artificial Neural Networks. In Artificial Intelligence and Pattern Recognition'', 88-94.
+
+\bibitem{b3}\href{https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection}{Kaggle: Brain MRI Images for Brain Tumor Detection}
+
+\bibitem{b4} M. Arbane, R. Benlamri, Y. Brik and M. Djerioui, "Transfer Learning for Automatic Brain Tumor Classification Using MRI Images," 2020 2nd International Workshop on Human-Centric Smart Environments for Health and Well-being (IHSH), 2021, pp. 210-214, doi: 10.1109/IHSH51661.2021.9378739.
+
+\vspace{12pt}
+\end{thebibliography}
+\end{document}
